@@ -1,5 +1,1 @@
-12	dan	12	10	120	
-panadol	soul	10	10	100	
-panadol	dan	12	10	120	
-panadol	dan	10	12	120	
-panadol	dan	10	12	120	
+
