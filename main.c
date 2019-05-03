@@ -21,7 +21,7 @@ struct cust
 }cust;
 
 
-void lele(){
+void post(){
   system("clear");
   printf("\n\t\t\t\t\t\tInvoice!\n\n");
   printf("\nEnter customer name: ");
@@ -50,7 +50,7 @@ char todaytime[50] = __TIME__;
   // fclose(fp);  
 }  
 
-void bta(){
+void getinfo(){
 
   char ch[10000];
   char str[2000];
@@ -69,7 +69,6 @@ ft = fopen(filename[1],"r");
       exit(EXIT_FAILURE);
    }
  
-   printf("The contents of %s file are:\n",filename);
   
   fscanf(fn,"%s",&item.item);
   fscanf(fn,"%s",&cust.name);
@@ -77,10 +76,11 @@ ft = fopen(filename[1],"r");
   fscanf(fn,"%d",&item.price);
   fscanf(fn,"%d",&item.tprice);
   fscanf(fn,"%s",&item.item);
-  fscanf(ft,"%s",&ch);
-
-  printf("%d - %s of rupees %d buyed by %s total:%d \n on Date:%s\n",item.quantity,item.item,item.price,cust.name,item.tprice,ch);
-   fclose(fn);
+  fscanf(ft,"%[^\n]",&ch);
+  printf("=================================================================================\n");
+  printf("%d - %s of rupees %d buyed by %s total:Rs %d  on Date:%s\n",item.quantity,item.item,item.price,cust.name,item.tprice,ch);
+  printf("=================================================================================\n");
+  fclose(fn);
 
 }
 
@@ -136,11 +136,11 @@ system("clear");
   switch (operation)
 {
     case 1:
-      lele();
+      post();
       goto admin;
   
     case 2:
-    bta();
+    getinfo();
     goto admin;
     case 3:
     goto start;
@@ -151,13 +151,6 @@ system("clear");
             }
     }
       goto start;
-    // case 2:
-    //   lele();
-    //   goto start;
-    // case 3:
-    
-    // bta();
-    // goto start;
     case 2:
     printf("\n\t\t\t\t\t\tExiting......\n\n");
     system("clear");
